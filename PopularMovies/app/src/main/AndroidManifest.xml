@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nitin.sunshine.app">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.example.nitin.popularmovies.app">
 
     <application
         android:allowBackup="true"
@@ -19,15 +17,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".DetailActivity"
-            android:label="@string/title_activity_detail"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.nitin.sunshine.app.MainActivity" />
         </activity>
     </application>
 
