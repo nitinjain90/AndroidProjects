@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Popular Movies</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="activity_settings">Settings</string>
+    <string name="activity_details">Movie Details</string>
+
+    <!-- Strings related to Settings -->
+
+
+    <string name = "action_settings">Settings</string>
+
+
+    <string name = "display_preferences_sort_order_key">SortType</string>
 </resources>
