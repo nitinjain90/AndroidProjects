@@ -17,10 +17,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
     <!-- Detail page theme. -->
     <style name="DetailTheme" parent="AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBar.DetailTheme</item>
+        <item name="android:actionBarStyle" tools:targetApi="honeycomb">@style/ActionBar.DetailTheme</item>
     </style>
 
     <!-- Detail page theme action bar. -->
@@ -67,4 +66,5 @@
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingBottom">16dp</item>
     </style>
+
 </resources>
