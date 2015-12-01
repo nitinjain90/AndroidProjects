@@ -7,6 +7,8 @@ import android.os.Parcelable;
  * Created by harash on 30/11/15.
  */
 public class Movie implements Parcelable {
+
+
     private String title;
     private String poster;
     private String overview;
@@ -20,6 +22,25 @@ public class Movie implements Parcelable {
        this.overview = overview;
        this.voteAverage = voteAverage;
        this.releaseDate = releaseDate;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public String getVoteAverage() {
+        return voteAverage;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {

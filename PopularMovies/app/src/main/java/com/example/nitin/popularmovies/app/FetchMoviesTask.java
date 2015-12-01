@@ -18,12 +18,16 @@ import java.text.ParseException;
  */
 public class FetchMoviesTask extends AsyncTask<String, Void, List<Movie>> {
 
-
+    public AsyncResponse delegate;
     private final String LOG_TAG = FetchMoviesTask.class.getSimpleName();
     private final String API_KEY = "501e1ab4177660ece7b90cc04feea48f";
     private final String MOVIE_POSTER_BASE = "http://image.tmdb.org/t/p/";
     private final String MOVIE_POSTER_SIZE = "w185";
 
+
+    public FetchMoviesTask(AsyncResponse delegate){
+        this.delegate = delegate;
+    }
 
     @Override
     protected List<Movie> doInBackground(String... params) {
@@ -35,6 +39,14 @@ public class FetchMoviesTask extends AsyncTask<String, Void, List<Movie>> {
         return null;
     }
 
+
+    @Override
+    protected void onPostExecute(List<Movie> results) {
+        if (results != null) {
+            // return the List of movies back to the caller.
+            delegate.onTaskCompleted(results);
+        }
+    }
 
 
 

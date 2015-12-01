@@ -42,6 +42,6 @@ public class ImageAdapter extends ArrayAdapter<String> {
         url = getItem(position);
         Picasso.with(context).load(url).into(imageView);
 
-        return super.getView(position, convertView, parent);
+        return v;
     }
 }
