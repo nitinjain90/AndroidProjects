@@ -62,10 +62,11 @@ public class MovieListFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        System.out.println(R.id.list_item_poster_view);
         mMoviePosterAdapter = new ImgAdapter(
                 getActivity(),
                 R.layout.list_item_poster,
-                R.id.list_item_poster_imageview,
+                R.id.list_item_poster_view,
                 new ArrayList<String>());
 
         View rootView = inflater.inflate(R.layout.fragment_movie_list, container, false);

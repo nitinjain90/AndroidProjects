@@ -16,15 +16,15 @@ import java.util.ArrayList;
  */
 public class ImgAdapter extends ArrayAdapter<String> {
 
-    private LayoutInflater mLayoutInflater;
+    private LayoutInflater layoutInflater;
     private Context context;
     private int layoutId;
     private int imageViewId;
 
 
-    public ImgAdapter(Context context, int layoutId, int imageViewID, ArrayList<String> urls) {
-        super(context, 0, urls);
-        this.mLayoutInflater = LayoutInflater.from(context);
+    public ImgAdapter(Context context, int layoutId, int imageViewId, ArrayList<String> urls) {
+        super(context, 0, 0, urls);
+        this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
         this.layoutId = layoutId;
         this.imageViewId = imageViewId;
@@ -36,10 +36,14 @@ public class ImgAdapter extends ArrayAdapter<String> {
         View v = convertView;
         String url;
         if(v == null){
-            v = mLayoutInflater.inflate(layoutId, parent, false);
+            v = layoutInflater.inflate(layoutId, parent, false);
         }
         ImageView imageView = (ImageView) v.findViewById(imageViewId);
         url = getItem(position);
+        System.out.println(url);
+        System.out.println(R.id.list_item_poster_view);
+        System.out.print(imageViewId);
+        System.out.print(layoutId);
         Picasso.with(context).load(url).into(imageView);
 
         return v;
