@@ -5,7 +5,6 @@
     android:orientation="vertical"
     tools:context="com.example.nitin.popularmovies.app.MovieDetailFragment">
 
-    <!-- movie title -->
     <TextView
         android:id="@+id/movie_title_view"
         android:layout_width="match_parent"
@@ -69,7 +68,6 @@
 
             </LinearLayout>
 
-            <!-- synopsis -->
             <TextView
                 android:id="@+id/synopsis_view"
                 android:layout_width="match_parent"

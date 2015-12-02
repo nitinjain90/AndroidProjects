@@ -9,12 +9,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/*
-*
-* Detail activity and displays the detail view of a movie
-* Inflates MovieDetailFragment for the main UI
-*
-* */
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MovieDetailActivity extends ActionBarActivity {

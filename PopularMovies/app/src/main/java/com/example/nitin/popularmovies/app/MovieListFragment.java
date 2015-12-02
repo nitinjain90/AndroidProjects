@@ -17,11 +17,7 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-*
-* the main UI of MainActivity and handles the logic for the view
-*
-* */
+
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MovieListFragment extends Fragment{

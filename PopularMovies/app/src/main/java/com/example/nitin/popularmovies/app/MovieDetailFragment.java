@@ -13,11 +13,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-/*
-*
-* the main UI of MovieDetailActivity and handles the logic for the view
-*
-* */
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MovieDetailFragment extends Fragment {

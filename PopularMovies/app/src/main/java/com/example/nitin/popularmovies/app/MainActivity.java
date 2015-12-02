@@ -9,12 +9,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/*
-*
-* Main activity and entry point into the app
-* Inflates MovieListFragment for the main UI
-*
-* */
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends ActionBarActivity {
