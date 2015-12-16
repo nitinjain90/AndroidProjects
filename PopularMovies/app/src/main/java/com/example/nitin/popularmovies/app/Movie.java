@@ -7,22 +7,21 @@ import android.os.Parcelable;
  * Created by harash on 30/11/15.
  */
 public class Movie implements Parcelable {
-
-
     private String title;
     private String poster;
     private String overview;
     private String voteAverage;
     private String releaseDate;
 
-    public Movie(String title, String poster, String overview, String voteAverage, String releaseDate) {
-
-       this.title = title;
-       this.poster = poster;
-       this.overview = overview;
-       this.voteAverage = voteAverage;
-       this.releaseDate = releaseDate;
+    public Movie(String title, String poster, String overview,
+                 String voteAverage, String releaseDate){
+        this.title = title;
+        this.poster = poster;
+        this.overview = overview;
+        this.voteAverage = voteAverage;
+        this.releaseDate = releaseDate;
     }
+
     public String getTitle() {
         return title;
     }
@@ -43,17 +42,19 @@ public class Movie implements Parcelable {
         return releaseDate;
     }
 
-    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
-        @Override
-        public Movie createFromParcel(Parcel in) {
-            return new Movie(in);
-        }
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(title);
+        out.writeString(poster);
+        out.writeString(overview);
+        out.writeString(voteAverage);
+        out.writeString(releaseDate);
+    }
 
-        @Override
-        public Movie[] newArray(int size) {
-            return new Movie[size];
-        }
-    };
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
     private Movie(Parcel in) {
         title = in.readString();
@@ -63,12 +64,13 @@ public class Movie implements Parcelable {
         releaseDate = in.readString();
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-    }
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

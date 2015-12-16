@@ -32,7 +32,7 @@ public class MovieDetailFragment extends Fragment {
         Intent intent = getActivity().getIntent();
         if (intent != null && intent.hasExtra("movies_details")) {
 
-            movie = intent.getParcelableExtra("movies_details");
+            movie = (Movie)intent.getParcelableExtra("movies_details");
             DisplayInfo(rootView);
 
         }
@@ -52,6 +52,9 @@ public class MovieDetailFragment extends Fragment {
         releaseDate.setText(movie.getReleaseDate());
         ratings.setText(movie.getVoteAverage() + "/10");
         overview.setText(movie.getOverview());
+
+
+        System.out.print(title);
     }
 
 }
