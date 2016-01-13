@@ -135,6 +135,7 @@ public class GetMoviesTask extends AsyncTask<String, Void, List<Movie>> {
 
 
         final String  LIST_OF_MOVIES = "results";
+        final String ORIGINAL_ID = "id";
         final String ORIGINAL_TITLE = "original_title";
         final String POSTER_PATH = "poster_path";
         final String OVERVIEW = "overview";
@@ -149,13 +150,14 @@ public class GetMoviesTask extends AsyncTask<String, Void, List<Movie>> {
         for(int i = 0; i<no_of_movies; i++ ) {
 
             JSONObject movie = moviesArray.getJSONObject(i);
+            int id = movie.getInt(ORIGINAL_ID);
             String title = movie.getString(ORIGINAL_TITLE);
             String poster = MOVIE_POSTER_BASE + MOVIE_POSTER_SIZE + movie.getString(POSTER_PATH);
             String overview = movie.getString(OVERVIEW);
             String voteAverage = movie.getString(VOTE_AVERAGE);
             String releaseDate = getYear(movie.getString(RELEASE_DATE));
 
-            movies.add(new Movie(title, poster, overview, voteAverage, releaseDate));
+            movies.add(new Movie(id, title, poster, overview, voteAverage, releaseDate));
         }
 
         return movies;
