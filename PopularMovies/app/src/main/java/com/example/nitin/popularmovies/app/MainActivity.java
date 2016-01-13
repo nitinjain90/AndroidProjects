@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements MovieListFragment.Callback{
 
     private FragmentManager fragmentManager = getFragmentManager();
     MovieListFragment fragment;
@@ -54,6 +54,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         fragmentManager.putFragment(savedInstanceState, "fragmentContent", fragment);
+    }
+
+    @Override
+
+    public void loadItem(Movie movie) {
+
     }
 
 

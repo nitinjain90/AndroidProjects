@@ -28,6 +28,8 @@ public class MovieListFragment extends Fragment{
     String sortOrder;
     List<Movie> movies = new ArrayList<Movie>();
 
+    public interface Callback {  public void loadItem(Movie movie);}
+
     public MovieListFragment() {
         setHasOptionsMenu(true);
     }
